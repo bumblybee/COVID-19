@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Tracker</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="info-modal" class="info-modal">
+      <button id="close-btn" class="close-btn">x</button>
+      <div class="container info-div">
+        <h2 class="info-heading">
+          About Tracker
+        </h2>
+        <p class="info-p">
+          <span class="text-warning">Cases: </span>
+          Total confirmed cases and today's case increase.
+        </p>
+        <p class="info-p">
+          <span class="text-danger">Deaths: </span>
+          Total deaths and current death rate.
+        </p>
+        <p class="info-p">
+          <span class="text-success">Recovered: </span>
+          Total recovered and current recovery rate.
+        </p>
+        <p class="info-p">
+          States sorted by number of cases, highest to lowest.
+        </p>
+
+        <br />
+        <br />
+
+        <div>
+          <p class="info-p text-muted">Data: John Hopkins University CSSE</p>
+          <p class="text-muted info-p">API: github.com/mathdroid</p>
+          <p class="info-p text-muted">
+            -Additional features to be added on an ongoing basis.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper bg-primary">
+      <nav class="navbar-nav fixed-top navbar-expand bg-primary">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Tracker</a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="info-btn">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="world-results" class="bg-primary"></div>
+      <div id="us-results" class="bg-primary"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="corona.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

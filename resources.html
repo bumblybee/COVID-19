@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Resources</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="info-modal" class="info-modal">
+      <button id="close-btn" class="close-btn">x</button>
+      <div class="container info-div">
+        <h2 class="info-heading">
+          About Tracker
+        </h2>
+        <p class="info-p">
+          <span class="text-warning">Cases: </span>
+          Total confirmed cases and today's case increase.
+        </p>
+        <p class="info-p">
+          <span class="text-danger">Deaths: </span>
+          Total deaths and current death rate.
+        </p>
+        <p class="info-p">
+          <span class="text-success">Recovered: </span>
+          Total recovered and current recovery rate.
+        </p>
+        <p class="info-p">
+          States sorted by number of cases, highest to lowest.
+        </p>
+
+        <br />
+        <br />
+
+        <div>
+          <p class="info-p text-muted">Data: John Hopkins University CSSE</p>
+          <p class="text-muted info-p">API: github.com/mathdroid</p>
+          <p class="info-p text-muted">
+            -Additional features to be added on an ongoing basis.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper resources-wrapper">
+      <nav class="navbar-nav fixed-top navbar-expand bg-primary">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Tracker</a>
+          </li>
+          <li class="nav-item">
+            <a href="resources.html" class="nav-link">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="info-btn">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Cards -->
+      
+      <div class="resources bg-primary">
+
+        <div class="general">
+          <div>
+            <h2 class="resource-type mb-0">
+              General Information
+            </h2>
+          </div>
+
+          <div class="card-group">
+            <div class="card">
+              <img
+                src="https://phil.cdc.gov//PHIL_Images/23354/23354_lores.jpg"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.cdc.gov/coronavirus/2019-ncov/index.html"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    Centers for Disease Control (CDC)
+                  </h6></a
+                >
+                <p class="card-text">
+                  Coronavirus (COVID-19): What You Need To Know
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="https://www.cdc.gov/media/dpk/diseases-and-conditions/coronavirus/images/outbreak-coronavirus-world-1024x506px.jpg "
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    World Health Organization
+                  </h6></a
+                >
+                <p class="card-text">
+                  WHO Coronavirus (COVID-19) Advice For The Public
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="https://cdn.i-scmp.com/sites/default/files/styles/768x768/public/d8/images/methode/2020/03/18/2632bc7e-681d-11ea-9de8-4adc9756b5c3_image_hires_115643.JPG?itok=QMAa3XA6&v=1584503808"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.ncbi.nlm.nih.gov/research/coronavirus/"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    LitCovid (NCBI/NLM/NIH)
+                  </h6></a
+                >
+                <p class="card-text">
+                  Hub For Scientific Information Surrounding COVID-19
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-group">
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt=""
+                class="card-img-top"
+              />
+
+              <div class="card-body">
+                <a
+                  href="https://www.johnahartford.org/dissemination-center/view/coronavirus-disease-covid-19-resources-for-older-adults-family-caregivers-and-health-care-providers"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    John A. Hartford Foundation
+                  </h6></a
+                >
+                <p class="card-text">
+                  COVID-19 Resources For Older Adults, Family Caregivers And
+                  Healthcare Providers
+                </p>
+              </div>
+            </div>
+
+           
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/1656666/pexels-photo-1656666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://nutrition.org/making-health-and-nutrition-a-priority-during-the-coronavirus-covid-19-pandemic/"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    American Society for Nutrition
+                  </h6></a
+                >
+                <p class="card-text">
+                  Nutrition And Health Guidance During The COVID-19 Pandemic
+                </p>
+              </div>
+            </div>
+
+             <div class="card">
+              <img
+                src="https://images.pexels.com/photos/1879288/pexels-photo-1879288.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.entuk.org/loss-sense-smell-marker-covid-19-infection"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    ENT UK
+                  </h6></a
+                >
+                <p class="card-text">
+                  Loss Of Smell May Be Indicator Of Coronavirus Infection When Other Symptoms Are Absent
+                </p>
+              </div>
+            </div>
+
+
+             <div class="card">
+              <img
+                src="https://images.pexels.com/photos/9796/car-refill-transportation-transport.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 "
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.nejm.org/doi/full/10.1056/NEJMc2004973"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    The New England Journal Of Medicine
+                  </h6></a
+                >
+                <p class="card-text">
+                  COVID-19 Can Remain Infectious On Surfaces For Days And In The Air For Hours
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- Assistance -->
+
+        <div class="assistance">
+          <div>
+            <h2 class="resource-type mb-0">
+              Assistance
+            </h2>
+          </div>
+          <div class="card-group">
+            <div class="card">
+              <img
+                src="https://ak5.picdn.net/shutterstock/videos/12767135/thumb/1.jpg"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="http://www.211.org/services/covid19"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    211 - United Way</h6>
+                    </a>
+                    <p class="card-text">Assistance Finding Food, Paying Housing Bills,
+                    Accessing Free Childcare And Other Essential Services</p>
+                  
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/351264/pexels-photo-351264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.forbes.com/sites/advisor/2020/03/12/list-of-banks-offering-relief-to-customers-affected-by-coronavirus/#5c6dace13ee3"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link">
+                    List Of Banks Offering Relief To Customers Affected By
+                    Coronavirus (COVID-19)
+                  </h6></a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1577941796491-999f99ba658f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://covid19freelanceartistresource.wordpress.com/"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    COVID-19 & Freelance Artists
+                  </h6></a
+                ><p class="card-text">Freelance Artist Resources: Preparedness, Legal Information, Funding, Events, etc.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.sba.gov/page/coronavirus-covid-19-small-business-guidance-loan-resources"
+                  target="_blank"
+                  class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    Small Business Association
+                  </h6></a
+                ><p class="card-text"> Coronavirus (COVID-19): Small Business Guidance & Loan Resources</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How to Help -->
+
+        <div class="help">
+          <div>
+            <h3 class="resource-type mb-0">
+              How You Can Help
+            </h3>
+          </div>
+          <div class="card-group">
+            <div class="card">
+              <img
+                src="masks.jpg"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.forbes.com/sites/tjmccue/2020/03/20/calling-all-people-who-sew-and-make-you-can-help-solve-2020-n95-type-mask-shortage/#56ae23bb4e41"
+                  target="_blank" class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    Calling All People Who Sew And Make
+                  </h6></a
+                ><p class="card-text">How You Can Help Solve 2020
+                    N95-Type Mask Shortage</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/98014/pexels-photo-98014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.redcross.org/about-us/news-and-events/news/2020/patients-need-everyday-heroes-especially-now.html"
+                  target="_blank" class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                   American Red Cross
+                    </h6></a
+                ><p class="card-text">The American Red Cross Is Facing A Severe Blood Shortage; Learn How To Donate</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="https://cdn.pixabay.com/photo/2020/03/17/07/44/covid-19-4939288_960_720.jpg"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.conehealth.com/services/primary-care/social-distancing-faq-how-it-helps-prevent-covid-19-coronavirus-/"
+                  target="_blank" class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    Social Distancing FAQ
+                  </h6></a
+                ><p class="card-text">How It Helps Prevent COVID-19 And Steps We Can Take To Protect Ourselves</p>
+            </div>
+            </div>
+
+
+            <div class="card">
+              <img
+                src="https://i1.wp.com/www.directrelief.org/wp-content/uploads/2020/03/masks.jpg?resize=640%2C360px&ssl=1"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://www.directrelief.org/emergency/coronavirus-outbreak/"
+                  target="_blank" class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    Direct Relief
+                  </h6></a
+                ><p class="card-text">Donate To Help Deliver Medical Supplies To
+                    Healthcare Organizations</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1576192350050-d9e08ee1f122?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt=""
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <a
+                  href="https://secure.feedingamerica.org/site/Donation2;jsessionid=00000000.app20121b?28371.donation=form1&idb=1556710472&df_id=28371&mfc_pref=T&NONCE_TOKEN=C4333FF6577B1BE65E89C403EF1A5988&s_channel=https://www.cnn.com/2020/03/14/us/blood-supply-food-banks-coronavirus-iyw-trnd/index.html&s_onsite_promo=hp_slider&s_subsrc=https://www.feedingamerica.org/&28371_donation=form1&s_src=W203REFER&s_referrer=https://www.cnn.com/2020/03/14/us/blood-supply-food-banks-coronavirus-iyw-trnd/index.html"
+                  target="_blank" class="stretched-link"
+                  ><h6 class="resource-link card-title">
+                    Feeding America COVID-19 Response Fund
+                  </h6></a
+                ><p class="card-text"> Donate To Help Communities And Individuals Facing Hunger</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Iowa -->
+
+        <div class="iowa">
+          <div>
+            <h3 class="resource-type mb-0">
+              Information For Iowans
+            </h3>
+          </div>
+          <div class="card-group">
+            <div class="card">
+              <img src="https://cdn.pixabay.com/photo/2020/03/11/23/50/coronavirus-4923544_960_720.jpg" class="card-img-top">
+              <div class="card-body">
+              <a
+                href="https://idph.iowa.gov/emerging-health-issues/novel-coronavirus"
+                target="_blank" class="stretched-link"
+                ><h6 class="resource-link">
+                  Iowa Department Of Public Health: Novel Coronavirus (COVID-19)
+                </h6></a
+              >
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="https://mjbizdaily.com/wp-content/uploads/2020/02/Iowa-state-glag-min.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+              <a href="https://governor.iowa.gov/newsroom" target="_blank" class="stretched-link"
+                ><h6 class="resource-link">
+                  Updates From The Office Of The Governor
+                </h6></a
+              >
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="card-img-top">
+              <div class="card-body">
+              <a
+                href="https://www.iowaworkforcedevelopment.gov/updates-and-resources-about-covid-19"
+                target="_blank" class="stretched-link"
+                ><h6 class="resource-link">
+                  Iowa Workforce Development COVID-19 Resources
+                </h6></a
+              >
+            </div>
+            </div>
+          </div>
+
+          <div class="card-group">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="card-img-top">
+              <div class="card-body">
+              <a href="https://dhs.iowa.gov/childcare-covid-19" target="_blank" class="stretched-link"
+                ><h6 class="resource-link">
+                  Childcare Guidance In Response To COVID-19 - Iowa DHS
+                </h6></a
+              >
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1571240977488-e054cd5dbe53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" alt="" class="card-img-top">
+              <div class="card-body">
+              <a
+                href="https://iub.iowa.gov/press-release/2020-03-13/iub-emergency-order-extends-utility-winter-moratorium"
+                target="_blank" class="stretched-link"
+                ><h6 class="resource-link card-title">
+                  Iowa Utilities Board
+                </h6></a
+              ><p class="card-text">Electric and Natural Gas Utilities To
+                  Cease Disconnection Until May 1</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="https://www.mygenealogyhound.com/maps/iowa-maps/ia-black-hawk-county-iowa-1911-map.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+              <a href="https://www.blackhawkcovid19.com/" target="_blank" class="stretched-link"
+                ><h6 class="resource-link">
+                  Black Hawk County COVID-19 Response
+                </h6></a
+              >
+              </div>
+            </div>
+            <!-- <div class="card">
+              <img src="masks.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+              <a
+                href="https://www.unitypoint.org/waterloo/article.aspx?id=95e9ad80-b02d-4379-bb09-3bee259be0b4"
+                target="_blank" class="stretched-link"
+                ><h6 class="resource-link card-title">
+                  Unity Point Health
+                </h6></a
+              ><p class="card-text">We Need Masks - Can You Help?</p>
+            </div>
+            </div> -->
+
+          </div>
+        </div>
+     
+
+      <!-- Treatment -->
+
+        <div class="treatment">
+          <div>
+            <h3 class="resource-type mb-0">Treatment Research</h3>
+          </div>
+          <div class="card-group">
+            <div class="card">
+              <img src="https://images.pexels.com/photos/140123/pexels-photo-140123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="card-img-top">
+              <div class="card-body">
+            <a
+              href="https://drive.google.com/file/d/186Bel9RqfsmEx55FDum4xY_IlWSHnGbj/view"
+              target="_blank" class="stretched-link"
+              ><h6 class="resource-link">
+                Hydroxychloroquine And Azithromycin As A Treatment Of COVID-19:
+                Results Of An Open-Label Non-Randomized Clinical Trial
+              </h6></a
+            >
+            </div>
+            </div>
+
+            <div class="card">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/University_of_Minnesota_entrance_sign_1.jpg/1920px-University_of_Minnesota_entrance_sign_1.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+            <a
+              href="https://med.umn.edu/news-events/covid-19-clinical-trial-launches-university-minnesota "
+              target="_blank" class="stretched-link"
+              ><h6 class="resource-link">
+                COVID-19 Clinical Trial Launches At University Of Minnesota
+              </h6></a
+            >
+            </div>
+            </div>
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="card-img-top">
+              <div class="card-body">
+            <a
+              href="https://epidemio.wiv-isp.be/ID/Documents/Covid19/COVID-19_InterimGuidelines_Treatment_ENG.pdf"
+              target="_blank" class="stretched-link"
+              ><h6 class="resource-link">
+                Interim Clinical Guidance For Patients Suspected Of/Confirmed
+                With COVID-19 In Belgium
+              </h6></a
+            >
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1578496779937-3815e442abed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1209&q=80" alt="" class="card-img-top">
+            <div class="card-body">
+            <a
+              href="https://sph.nus.edu.sg/wp-content/uploads/2020/03/COVID-19-Science-Report-Therapeutics-13-Mar.pdf"
+              target="_blank" class="stretched-link"
+              ><h6 class="research-text resource-link">
+                NUS COVID-19 Science Report: Therapeutics
+              </h6></a
+            >
+            </div>
+            </div>
+
+            <div class="card">
+              <img src="https://images.pexels.com/photos/3936421/pexels-photo-3936421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="card-img-top">
+              <div class="card-body">
+            <a
+              href="https://www.connexionfrance.com/French-news/French-researcher-in-Marseille-posts-successful-Covid-19-coronavirus-drug-trial-results"
+              target="_blank" class="stretched-link"
+              ><h6 class=" resource-link">
+                French Researcher Posts Successful COVID-19 Drug Trial
+              </h6></a
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      
+    
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="corona.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

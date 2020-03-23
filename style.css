@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("img/cov.jpg") no-repeat fixed;
+  background-size: cover;
+  background-position: center;
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+  height: 100vh;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.info-modal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(36, 35, 35, 0.972);
+  padding: 5%;
+  text-align: left;
+  font-size: 1rem;
+  color: rgba(216, 216, 216, 0.959);
+  overflow: auto;
+
+  animation: openModal 0.3s ease-in-out;
+}
+
+.info-div {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.info-heading {
+  color: #d8d8d8;
+  margin: 1.5rem auto 3.5rem;
+}
+
+.info-p {
+  font-size: 1.1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+  color: #d8d8d8;
+  font-size: 1.4rem;
+}
+
+.close-btn:focus {
+  outline: none;
+}
+
+.close-btn:hover {
+  color: #7a7979;
+}
+
+.nav-link {
+  color: #d8d8d8;
+}
+
+.nav-link:hover {
+  color: #727070;
+}
+
+.wrapper {
+  overflow-x: hidden;
+  height: 100vh;
+  opacity: 0.94;
+  animation: openModal 0.4s ease-in-out;
+}
+
+.row {
+  text-align: center;
+}
+
+.title {
+  color: #d8d8d8;
+  padding: 2rem;
+}
+
+#tracker-title {
+  padding-top: 5%;
+}
+
+.cases,
+.deaths,
+.recovered {
+  font-size: 1.3rem;
+  margin: 0 auto 0.2rem;
+  padding: 1rem;
+  width: 40%;
+  text-align: left;
+}
+
+.numbers {
+  color: #d8d8d8;
+  margin-left: 0.3rem;
+}
+
+.new-global-cases,
+.death-percent,
+.recovered-percent {
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+/* Resources Page */
+
+.resources-wrapper {
+  opacity: 0.985;
+}
+
+.resources {
+  display: grid;
+  grid-template-columns: 1fr, 2fr;
+  grid-gap: 1rem;
+  justify-items: center;
+  height: 100vh;
+  overflow: auto;
+
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.resource-type {
+  color: hsl(44, 70%, 13%);
+  opacity: 0.9;
+  text-align: center;
+  padding: 2%;
+  background-color: #dab03c;
+}
+
+.resource-link {
+  color: #d8d8d8;
+  font-size: 1rem;
+  text-transform: none;
+}
+
+.resource-video {
+  opacity: 0.9;
+  margin-left: 1.3rem;
+}
+
+.general h2 {
+  margin-top: 3%;
+}
+
+.card {
+  border: 0;
+  margin-right: 0.3rem;
+  transition: transform 0.1s;
+}
+
+/* .card:hover {
+  box-shadow: 0;
+  transform: scale(0.97);
+} */
+
+.card-group .card:last-child {
+  margin-right: 0;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 13vw;
+  object-fit: cover;
+}
+
+.card-body {
+  background: #2c2c2c;
+  color: #d8d8d8;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  font-family: "Lato", sans-serif;
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes closeModal {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    margin: 0 auto;
+  }
+
+  .list-group-flush,
+  .list-group {
+    width: 100%;
+  }
+
+  .cases,
+  .deaths,
+  .recovered {
+    width: 100%;
+  }
+
+  #search-states {
+    width: 70%;
+  }
+
+  .general h2 {
+    margin-top: 8%;
+  }
+
+  .resource-link,
+  .resource-video {
+    text-transform: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .list-group-flush,
+  .list-group {
+    width: 90%;
+  }
+
+  .general h2 {
+    margin-top: 10%;
+  }
+
+  .card {
+    margin-right: 0;
+  }
+
+  .info-div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 382px) {
+  .general,
+  .assistance,
+  .help,
+  .iowa,
+  .treatment {
+    max-width: fit-content;
+  }
+
+  .resources {
+    padding-top: 3%;
+  }
+}
