@@ -43,20 +43,17 @@ api.globalTotals().then(data => {
   ui.paintGlobalTotals(data);
 });
 
-let today = new Date();
-let dd = String(today.getDate()).padStart(2, "0");
-let ydd = String(today.getDate() - 1).padStart(2, "0");
-let mm = String(today.getMonth() + 1);
-let yy = String(today.getFullYear()).substr(-2);
-console.log(mm, yy);
-
 api.globalChanges().then(data => {
-  let yesterday = mm + "/" + ydd + "/" + yy;
-  today = mm + "/" + dd + "/" + yy;
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, "0");
+  let ydd = String(today.getDate() - 1).padStart(2, "0");
+  let mm = String(today.getMonth() + 1);
+  let yyyy = today.getFullYear();
+  let yesterday = mm + "/" + ydd + "/" + yyyy;
+  today = mm + "/" + dd + "/" + yyyy;
+
   // console.log(data);
 
-  let todaysCases;
-  let yesterdaysCases;
   let newCases = 0;
 
   data.forEach(country => {
@@ -85,8 +82,6 @@ api.usTotals().then(data => {
 });
 
 api.stateTotals().then(data => {
-  console.log(data);
-
   ui.paintStateTotals(data);
 });
 

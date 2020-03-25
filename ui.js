@@ -20,9 +20,9 @@ class UI {
       <h1 class="text-center title global-title"><small class="text-muted"><br>(Global)</small></h1>
 
       <ul class="list-group-flush bg-primary stats-list">
-       <li class="cases list-group-item bg-dark text-warning"> Cases:<span id="global-cases" data-number= ${
+       <li class="cases list-group-item bg-dark text-warning"> Cases:<span id="global-cases" data-number="${
          results.cases
-       } class="numbers"> ${results.cases.toLocaleString()}</span></li>
+       }" class="numbers"> ${results.cases.toLocaleString()}</span></li>
        <li class="deaths list-group-item bg-dark text-danger">Deaths:<span class="numbers"> ${results.deaths.toLocaleString()}</span><span class="death-rate text-muted ml-3">${deathRate}%</span></li>
        <li class="recovered list-group-item bg-dark text-success">Recovered:<span class="numbers"> ${results.recovered.toLocaleString()}</span><span class="recovery-rate text-muted">${recoveryRate}%</span></li>
       </ul>
