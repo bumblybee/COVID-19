@@ -48,9 +48,9 @@ api.globalChanges().then(data => {
   let dd = String(today.getDate()).padStart(2, "0");
   let ydd = String(today.getDate() - 1).padStart(2, "0");
   let mm = String(today.getMonth() + 1);
-  let yyyy = today.getFullYear();
-  let yesterday = mm + "/" + ydd + "/" + yyyy;
-  today = mm + "/" + dd + "/" + yyyy;
+  let yy = String(today.getFullYear()).substr(-2);
+  let yesterday = mm + "/" + ydd + "/" + yy;
+  today = mm + "/" + dd + "/" + yy;
 
   // console.log(data);
 
@@ -61,6 +61,7 @@ api.globalChanges().then(data => {
       if (key === yesterday) {
         console.log(`${key}: ${value}`);
         newCases += Number(value);
+        console.log(newCases);
       }
     });
   });

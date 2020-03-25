@@ -97,9 +97,9 @@ a:hover {
 .active-cases,
 .critical {
   font-size: 1.3rem;
-  padding: 1rem;
-  width: 40%;
-  text-align: left;
+  padding: 1.2rem;
+  width: 30%;
+  text-align: initial;
   margin: 0 auto 0.18rem;
   border-radius: 2px;
 }
@@ -127,7 +127,7 @@ a:hover {
 
 .numbers {
   color: #d8d8d8;
-  margin-left: 0.5rem;
+  margin-left: 0.6rem;
 }
 
 .rank {
@@ -170,7 +170,7 @@ a:hover {
 
 #search-states {
   margin: 0 auto;
-  width: 25%;
+  width: 15%;
   opacity: 0.9;
   background: #404349;
   color: #d8d8d8;
@@ -216,7 +216,7 @@ a:hover {
   opacity: 0.9;
   text-align: center;
   padding: 2%;
-  background-color: #dab03c;
+  background-color: #a79817;
 }
 
 .resource-link {
@@ -316,7 +316,7 @@ a:hover {
   }
 
   #search-states {
-    width: 70%;
+    width: 60%;
   }
 
   .resource-link,
