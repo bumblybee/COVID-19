@@ -171,11 +171,11 @@ a:hover {
 #search-states {
   margin: 0 auto;
   width: 15%;
-  opacity: 0.9;
-  background: #404349;
+  opacity: 0.8;
+  background: rgba(64, 67, 73, 0.499);
   color: #d8d8d8;
-  font-size: 1.2rem;
-  border: 1px solid rgba(216, 216, 216, 0.596);
+  font-size: 1.1rem;
+  border: 1px solid rgba(216, 216, 216, 0.396);
 }
 
 #search-states:focus {
