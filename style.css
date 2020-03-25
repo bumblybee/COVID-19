@@ -83,34 +83,113 @@ a:hover {
 
 .title {
   color: #d8d8d8;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 #tracker-title {
-  padding-top: 5%;
+  padding-top: 6%;
+  padding-bottom: 0;
 }
 
 .cases,
 .deaths,
-.recovered {
+.recovered,
+.active-cases,
+.critical {
   font-size: 1.3rem;
-  margin: 0 auto 0.2rem;
   padding: 1rem;
   width: 40%;
   text-align: left;
+  margin: 0 auto 0.18rem;
+  border-radius: 2px;
+}
+
+.active-cases {
+  color: #998b0c;
+}
+
+.critical {
+  color: #db721b;
+}
+
+.new-cases,
+.recovery-rate,
+.new-death {
+  color: #d8d8d8;
+  font-size: 0.9rem;
+  padding: 0.8rem;
+}
+
+.death-rate {
+  color: #d8d8d8;
+  font-size: 0.9rem;
 }
 
 .numbers {
   color: #d8d8d8;
-  margin-left: 0.3rem;
+  margin-left: 0.5rem;
 }
 
-.new-global-cases,
-.death-percent,
-.recovered-percent {
-  color: #d8d8d8;
-  font-size: 0.9rem;
+.rank {
+  color: rgba(216, 216, 216, 0.9);
+  text-align: center;
+  display: inline-block;
+}
+
+.state-title {
+  margin: 2.5rem 0 1rem;
+  color: rgba(216, 216, 216, 0.9);
+  display: inline-block;
+  margin-left: 1%;
+}
+
+.county-list {
+  display: inline-block;
+  width: 60%;
+  border: none;
+}
+
+.county {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 auto 0.4rem;
   padding: 1rem;
+  width: 40%;
+}
+
+.county-name {
+  font-size: 1.55rem;
+  letter-spacing: 0.13rem;
+  text-align: center;
+}
+
+.county-cases,
+.county-deaths {
+  border: none;
+}
+
+#search-states {
+  margin: 0 auto;
+  width: 25%;
+  opacity: 0.9;
+  background: #404349;
+  color: #d8d8d8;
+  font-size: 1.2rem;
+  border: 1px solid rgba(216, 216, 216, 0.596);
+}
+
+#search-states:focus {
+  background: transparent;
+  color: #d8d8d8;
+  opacity: 0.6;
+  border: 1px solid rgba(216, 216, 216, 0.596);
+}
+
+#search-states:active {
+  background: transparent;
+  color: #d8d8d8;
+  opacity: 0.6;
+  border: 1px solid rgba(216, 216, 216, 0.596);
 }
 
 /* Resources Page */
@@ -151,20 +230,16 @@ a:hover {
   margin-left: 1.3rem;
 }
 
-.general h2 {
-  margin-top: 3%;
-}
-
 .card {
   border: 0;
   margin-right: 0.3rem;
   transition: transform 0.1s;
 }
 
-/* .card:hover {
+.card:hover {
   box-shadow: 0;
   transform: scale(0.97);
-} */
+}
 
 .card-group .card:last-child {
   margin-right: 0;
@@ -209,12 +284,8 @@ a:hover {
     padding-top: 10%;
   }
 
-  .navbar-nav {
-    margin: 0 auto;
-  }
-
   .wrapper {
-    padding-top: 20%;
+    padding-top: 10%;
   }
 
   .list-group-flush,
@@ -224,21 +295,37 @@ a:hover {
 
   .cases,
   .deaths,
-  .recovered {
+  .recovered,
+  .active-cases,
+  .critical {
     width: 100%;
+  }
+
+  .county-list {
+    padding: 0;
+    width: 100%;
+  }
+
+  .county {
+    text-align: center;
+    width: 45%;
+  }
+
+  .county-name {
+    font-size: 1.1rem;
   }
 
   #search-states {
     width: 70%;
   }
 
-  .general h2 {
-    margin-top: 8%;
-  }
-
   .resource-link,
   .resource-video {
     text-transform: none;
+  }
+
+  .card:hover {
+    transform: scale(0);
   }
 
   .card-img-top {
@@ -252,10 +339,6 @@ a:hover {
   .list-group-flush,
   .list-group {
     width: 90%;
-  }
-
-  .general h2 {
-    margin-top: 10%;
   }
 
   .card {

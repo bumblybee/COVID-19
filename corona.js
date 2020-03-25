@@ -1,16 +1,16 @@
 class API {
   constructor() {
-    this.url = "https://covid19.mathdro.id/api";
+    this.url = "https://corona.lmao.ninja";
   }
 
   async globalTotals() {
-    const res = await fetch(this.url);
+    const res = await fetch(`${this.url}/all`);
     const data = await res.json();
     return data;
   }
 
   async globalChanges() {
-    const res = await fetch(`${this.url}/daily`);
+    const res = await fetch(`${this.url}/v2/historical`);
     const data = await res.json();
     return data;
   }
@@ -21,8 +21,8 @@ class API {
     return data;
   }
 
-  async usRecovered() {
-    const res = await fetch(`${this.url}/recovered`);
+  async stateTotals() {
+    const res = await fetch(`${this.url}/states`);
     const data = await res.json();
     return data;
   }
