@@ -57,26 +57,18 @@ api.globalChanges().then(data => {
   let newCases = 0;
 
   data.forEach(country => {
+    //Grab each object key/value pair
     Object.entries(country.timeline.cases).forEach(([key, value]) => {
+      //If the key matches yesterday's date, add each case
       if (key === yesterday) {
-        console.log(`${key}: ${value}`);
         newCases += Number(value);
-        console.log(newCases);
+        // console.log(newCases);
       }
     });
   });
   // console.log(newCases.toLocaleString());
   ui.paintGlobalChanges(newCases);
 });
-
-// if (date.reportDateString === yesterday) {
-//   yesterdaysCases = date.totalConfirmed;
-// }
-
-// newCases = todaysCases - yesterdaysCases;
-// newCases = newCases.toLocaleString();
-
-// ui.paintNewCases(newCases, today);
 
 api.usTotals().then(data => {
   ui.paintUSTotals(data);
@@ -85,32 +77,3 @@ api.usTotals().then(data => {
 api.stateTotals().then(data => {
   ui.paintStateTotals(data);
 });
-
-// api.globalChanges().then(data => {
-//   let today = new Date();
-//   let dd = String(today.getDate()).padStart(2, "0");
-//   let ydd = String(today.getDate() - 1).padStart(2, "0");
-//   let mm = String(today.getMonth() + 1).padStart(2, "0");
-//   let yyyy = today.getFullYear();
-//   let yesterday = yyyy + "-" + mm + "-" + ydd;
-
-//   today = yyyy + "-" + mm + "-" + dd;
-
-//   let todaysCases;
-//   let yesterdaysCases;
-//   let newCases;
-
-//   data.forEach(date => {
-//     const dateString = String(date.reportDate);
-
-//     if (dateString === today) {
-//       todaysCases = date.totalConfirmed;
-//     }
-
-//     if (dateString === yesterday) {
-//       yesterdaysCases = date.totalConfirmed;
-//     }
-//   });
-
-//   ui.paintGlobalChanges(yesterdaysCases);
-// });
