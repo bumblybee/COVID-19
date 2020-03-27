@@ -211,6 +211,10 @@ a:hover {
   overflow-wrap: anywhere;
 }
 
+.general:first-child {
+  padding-top: 2%;
+}
+
 .resource-type {
   color: hsl(44, 70%, 13%);
   opacity: 0.9;
