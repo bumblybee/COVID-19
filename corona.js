@@ -26,4 +26,12 @@ class API {
     const data = await res.json();
     return data;
   }
+
+  async countyTotals() {
+    const res = await fetch(
+      "https://covid19.mathdro.id/api/countries/USA/confirmed"
+    );
+    const data = await res.json();
+    return data;
+  }
 }

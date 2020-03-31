@@ -91,6 +91,10 @@ a:hover {
   padding-bottom: 0;
 }
 
+.counties {
+  display: none;
+}
+
 .cases,
 .deaths,
 .recovered,
@@ -143,29 +147,21 @@ a:hover {
   margin-left: 1%;
 }
 
-.county-list {
-  display: inline-block;
-  width: 60%;
-  border: none;
-}
-
 .county {
-  display: inline-block;
-  font-size: 1.2rem;
   margin: 0 auto 0.4rem;
   padding: 1rem;
-  width: 40%;
 }
 
-.county-name {
-  font-size: 1.55rem;
-  letter-spacing: 0.13rem;
-  text-align: center;
+.county-title {
+  margin-top: 2rem;
 }
 
-.county-cases,
-.county-deaths {
-  border: none;
+.show-county {
+  display: block;
+}
+
+.hide-states {
+  display: none;
 }
 
 #search-states {
