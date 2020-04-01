@@ -60,7 +60,7 @@ usResults.addEventListener("click", e => {
   Array.from(counties);
   if (searchStates.value !== "") {
     Array.from(stateTitles).forEach(title => {
-      if (e.target === title || e.target.id === "search-states") {
+      if (e.target === title) {
         const state = e.target.textContent;
 
         for (let i = 0; i < counties.length; i++) {
