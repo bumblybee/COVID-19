@@ -5,6 +5,7 @@ class UI {
     this.stateResults = `
     <input type="text" id="search-states" class="form-control form-control-sm rounded mb-4 mt-4" placeholder="Filter states..." />
 `;
+    this.countyResults = document.getElementById("county-results");
   }
 
   paintGlobalTotals(results) {
@@ -17,10 +18,8 @@ class UI {
     <h1 id="tracker-title" class="title text-center">COVID-19 Tracker</h1>
     <div class="row bg-primary">
       <div class="col bg-primary">
-
       
       <h1 class="text-center title global-title"><small class="text-muted"><br>(Global)</small></h1>
-
       <ul class="list-group-flush bg-primary stats-list">
        <li class="cases list-group-item bg-dark text-warning"> Cases:<span id="global-cases" data-cases="${
          results.cases
@@ -28,7 +27,6 @@ class UI {
        <li class="deaths list-group-item bg-dark text-danger">Deaths:<span class="numbers"> ${results.deaths.toLocaleString()}</span><span class="death-rate text-muted ml-3">${deathRate}%</span></li>
        <li class="recovered list-group-item bg-dark text-success">Recovered:<span class="numbers"> ${results.recovered.toLocaleString()}</span><span class="recovery-rate text-muted">${recoveryRate}%</span></li>
       </ul>
-
      </div>
     </div>`;
   }
@@ -53,15 +51,12 @@ class UI {
       <div class="col bg-primary">
         <ul class="stats-list list-group-flush bg-primary">
          <li class="cases list-group-item bg-dark text-warning"> Cases:<span class="numbers"> ${results.cases.toLocaleString()}</span><span class="new-cases text-muted">+${results.todayCases.toLocaleString()}</span></li>
-
         <li class="active-cases list-group-item bg-dark">Active:<span class="numbers"> ${results.active.toLocaleString()}</span></li>
-
         <li class="critical list-group-item bg-dark">Critical:<span class="numbers"> ${results.critical.toLocaleString()}</span></li>
         
         <li class="deaths list-group-item bg-dark text-danger">Deaths:<span class="numbers"> ${results.deaths.toLocaleString()}</span><span class="new-death text-muted">+${
       results.todayDeaths
     }</span><span class="death-rate text-muted">${deathRate}%</span></li>
-
          <li class="list-group-item bg-dark text-success recovered">Recovered:<span class="numbers"> ${results.recovered.toLocaleString()}</span><span class="recovery-rate text-muted">${recoveryRate}%</span></li>
          
        </ul>
@@ -124,13 +119,11 @@ class UI {
          <!-- <li class="list-group-item bg-dark active-cases">Active:<span class="numbers"> ${result.active.toLocaleString()}</span></li> -->
           <li class="list-group-item bg-dark text-danger deaths">Deaths:<span class="numbers"> ${result.deaths.toLocaleString()}</span></li>
       <!-- <li class="list-group-item bg-dark text-success recovered">Recovered:<span class="numbers"> ${result.recovered.toLocaleString()}</span></li> -->
-
           </ul>
          </div>
         </div>`;
-      // console.log(`${result.admin2}: ${result.confirmed}`);
     });
-
-    this.usResults.innerHTML += countyTotals;
+    //Changed this to load in county results so it doesn't push state results to bottom of counties
+    this.countyResults.innerHTML += countyTotals;
   }
 }

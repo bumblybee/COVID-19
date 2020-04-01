@@ -23,29 +23,27 @@ usResults.addEventListener("keyup", e => {
     const children = usResults.children;
     Array.from(children).forEach(child => {
       if (child.classList.contains("states")) {
-        const title = child.firstElementChild.firstElementChild.nextElementSibling.textContent.toLowerCase();
+        const h1 = child.firstElementChild.firstElementChild.nextElementSibling;
+        const title = h1.textContent.toLowerCase();
         if (searchText !== "") {
           if (title.indexOf(searchText) !== -1) {
             //Create in UI
             child.style.display = "block";
-            // const stateTitles = document.getElementsByClassName("state-title");
-            // Array.from(stateTitles).forEach(name => {
-            //   const state = name.textContent;
-            //   const counties = document.getElementsByClassName("county-title");
-            //   Array.from(counties);
-            //   for (let i = 0; i < counties.length; i++) {
-            //     const county = counties[i];
-            //     const countyDiv = county.parentElement.parentElement;
-            //     if (counties[i].dataset.state === title) {
-            //       countyDiv.className = "show-county";
-            //     }
-            //   }
-            // });
+            h1.style.cursor = "pointer";
           } else {
             child.style.display = "none";
             usResults.style.paddingBottom = "5%";
           }
         } else if (searchText === "") {
+          // Get rid of counties if input is blank
+          const counties = document.getElementsByClassName("county-title");
+          Array.from(counties);
+          for (let i = 0; i < counties.length; i++) {
+            const county = counties[i];
+            const countyDiv = county.parentElement.parentElement;
+            countyDiv.style.display = "none";
+          }
+          //Show states
           child.style.display = "block";
         }
       }
@@ -55,18 +53,20 @@ usResults.addEventListener("keyup", e => {
 
 usResults.addEventListener("click", e => {
   const searchStates = document.getElementById("search-states");
+  const stateTitles = document.getElementsByClassName("state-title");
+  const counties = document.getElementsByClassName("county-title");
+  Array.from(counties);
   if (searchStates.value !== "") {
-    const stateTitles = document.getElementsByClassName("state-title");
     Array.from(stateTitles).forEach(title => {
       if (e.target === title || e.target.id === "search-states") {
         const state = e.target.textContent;
-        const counties = document.getElementsByClassName("county-title");
-        Array.from(counties);
+
         for (let i = 0; i < counties.length; i++) {
           const county = counties[i];
           const countyDiv = county.parentElement.parentElement;
           if (counties[i].dataset.state === state) {
             countyDiv.classList.toggle("show-county");
+            usResults.style.paddingBottom = "0";
           }
         }
       }
