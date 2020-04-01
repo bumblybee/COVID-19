@@ -324,8 +324,12 @@ a:hover {
     text-transform: none;
   }
 
+  .card {
+    transition: none;
+  }
+
   .card:hover {
-    transform: scale(0);
+    transform: none;
   }
 
   .card-img-top {
