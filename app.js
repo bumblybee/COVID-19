@@ -17,6 +17,8 @@ closeBtn.addEventListener("click", e => {
   infoModal.style.display = "none";
 });
 
+//TODO: Fix counties only loading on first instance
+
 usResults.addEventListener("keyup", e => {
   if ((e.target.id = "search-states")) {
     const searchText = e.target.value.toLowerCase();
@@ -87,8 +89,6 @@ api.globalChanges().then(data => {
   let yesterday = mm + "/" + ydd + "/" + yy;
   today = mm + "/" + dd + "/" + yy;
 
-  // console.log(data);
-
   let newCases = 0;
 
   data.forEach(country => {
@@ -109,14 +109,17 @@ api.usTotals().then(data => {
   ui.paintUSTotals(data);
 });
 
-api.stateTotals().then(data => {
-  ui.paintStateTotals(data);
-});
+//Load this after everything else is loaded so US and global totals load first
+window.addEventListener("load", () => {
+  api.stateTotals().then(data => {
+    ui.paintStateTotals(data);
+  });
 
-api.countyTotals().then(data => {
-  // console.log(data);
-  // let stateNames = document.getElementsByClassName("state-title");
-  // Array.from(stateNames).forEach(name => {
-  //   const state = name.textContent;
-  ui.paintCountyTotals(data);
+  api.countyTotals().then(data => {
+    // console.log(data);
+    // let stateNames = document.getElementsByClassName("state-title");
+    // Array.from(stateNames).forEach(name => {
+    //   const state = name.textContent;
+    ui.paintCountyTotals(data);
+  });
 });
