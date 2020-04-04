@@ -69,7 +69,7 @@ class UI {
   paintStateTotals(results) {
     let rank = 1;
 
-    results.forEach(result => {
+    results.forEach((result) => {
       const deathRate = ((result.deaths / result.cases) * 100).toFixed(1);
       const recovered = result.cases - (result.active + result.deaths);
       const recoveryRate = ((recovered / result.cases) * 100).toFixed(1);
@@ -106,7 +106,7 @@ class UI {
 
   paintCountyTotals(results) {
     let countyTotals = "";
-    results.forEach(result => {
+    results.forEach((result) => {
       // console.log(result);
       countyTotals += `
         <div class="row bg-primary counties" id="counties">

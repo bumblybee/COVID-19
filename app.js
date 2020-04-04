@@ -9,21 +9,21 @@ const usResults = document.getElementById("us-results");
 const stateResults = document.getElementById("state-results");
 const counties = document.getElementsByClassName("counties");
 
-infoBtn.addEventListener("click", e => {
+infoBtn.addEventListener("click", (e) => {
   infoModal.style.display = "block";
 });
 
-closeBtn.addEventListener("click", e => {
+closeBtn.addEventListener("click", (e) => {
   infoModal.style.display = "none";
 });
 
 //TODO: Fix counties only loading on first instance
 
-usResults.addEventListener("keyup", e => {
+usResults.addEventListener("keyup", (e) => {
   if ((e.target.id = "search-states")) {
     const searchText = e.target.value.toLowerCase();
     const children = usResults.children;
-    Array.from(children).forEach(child => {
+    Array.from(children).forEach((child) => {
       if (child.classList.contains("states")) {
         const h1 = child.firstElementChild.firstElementChild.nextElementSibling;
         const title = h1.textContent.toLowerCase();
@@ -53,13 +53,13 @@ usResults.addEventListener("keyup", e => {
   }
 });
 
-usResults.addEventListener("click", e => {
+usResults.addEventListener("click", (e) => {
   const searchStates = document.getElementById("search-states");
   const stateTitles = document.getElementsByClassName("state-title");
   const counties = document.getElementsByClassName("county-title");
   Array.from(counties);
   if (searchStates.value !== "") {
-    Array.from(stateTitles).forEach(title => {
+    Array.from(stateTitles).forEach((title) => {
       if (e.target === title) {
         const state = e.target.textContent;
 
@@ -76,46 +76,46 @@ usResults.addEventListener("click", e => {
   }
 });
 
-api.globalTotals().then(data => {
+api.globalTotals().then((data) => {
   ui.paintGlobalTotals(data);
 });
 
-api.globalChanges().then(data => {
+api.globalChanges().then((data) => {
   let today = new Date();
-  let dd = String(today.getDate()).padStart(2, "0");
-  let ydd = String(today.getDate() - 1).padStart(2, "0");
+  let dd = String(today.getDate()).padStart(1, "0");
+  let ydd = String(today.getDate() - 1).padStart(1, "0");
   let mm = String(today.getMonth() + 1);
   let yy = String(today.getFullYear()).substr(-2);
   let yesterday = mm + "/" + ydd + "/" + yy;
   today = mm + "/" + dd + "/" + yy;
 
-  let newCases = 0;
+  let yesterdaysCases = 0;
+  let todaysCases = 0;
 
-  data.forEach(country => {
+  data.forEach((country) => {
     //Grab each object key/value pair
     Object.entries(country.timeline.cases).forEach(([key, value]) => {
-      //If the key matches yesterday's date, add each case
+      // If the key matches yesterday's date, add each case
       if (key === yesterday) {
-        newCases += Number(value);
-        // console.log(newCases);
+        yesterdaysCases += Number(value);
+        console.log(yesterdaysCases);
       }
     });
   });
-  // console.log(newCases.toLocaleString());
-  ui.paintGlobalChanges(newCases);
+  ui.paintGlobalChanges(yesterdaysCases);
 });
 
-api.usTotals().then(data => {
+api.usTotals().then((data) => {
   ui.paintUSTotals(data);
 });
 
 //Load this after everything else is loaded so US and global totals load first
 window.addEventListener("load", () => {
-  api.stateTotals().then(data => {
+  api.stateTotals().then((data) => {
     ui.paintStateTotals(data);
   });
 
-  api.countyTotals().then(data => {
+  api.countyTotals().then((data) => {
     // console.log(data);
     // let stateNames = document.getElementsByClassName("state-title");
     // Array.from(stateNames).forEach(name => {
