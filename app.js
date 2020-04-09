@@ -116,10 +116,6 @@ window.addEventListener("load", () => {
   });
 
   api.countyTotals().then((data) => {
-    // console.log(data);
-    // let stateNames = document.getElementsByClassName("state-title");
-    // Array.from(stateNames).forEach(name => {
-    //   const state = name.textContent;
     ui.paintCountyTotals(data);
   });
 });
