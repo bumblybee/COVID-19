@@ -73,7 +73,7 @@ a:hover {
 .wrapper {
   overflow-x: hidden;
   height: 100vh;
-  opacity: 0.95;
+  opacity: 0.94;
   animation: openModal 0.4s ease-in-out;
 }
 
