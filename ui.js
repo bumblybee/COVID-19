@@ -55,7 +55,7 @@ class UI {
         
         <li class="deaths list-group-item bg-dark text-danger">Deaths:<span class="numbers"> ${results.deaths.toLocaleString()}</span><span class="new-death text-muted">+${results.todayDeaths.toLocaleString()}</span><span class="death-rate text-muted">${deathRate}%</span></li>
          <li class="list-group-item bg-dark text-success recovered">Recovered:<span class="numbers"> ${results.recovered.toLocaleString()}</span><span class="recovery-rate text-muted">${recoveryRate}%</span></li>
-         <li class="active-cases list-group-item bg-dark">Tests:<span class="numbers"> ${results.tests.toLocaleString()}</span></li>
+         <li class="tests text-info list-group-item bg-dark">Tests:<span class="numbers"> ${results.tests.toLocaleString()}</span></li>
          
        </ul>
       </div>
@@ -84,6 +84,7 @@ class UI {
         result.todayDeaths
       }</span><span class="death-rate text-muted">${deathRate}%</span></li>
       <li class="list-group-item bg-dark text-success recovered">Recovered:<span class="numbers"> ${recovered.toLocaleString()}</span><span class="recovery-rate text-muted">${recoveryRate}%</span></li>
+      <li class="tests text-info list-group-item bg-dark">Tests:<span class="numbers"> ${result.tests.toLocaleString()}</span></li>
           
           </ul>
            </div>

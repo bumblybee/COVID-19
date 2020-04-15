@@ -98,6 +98,7 @@ a:hover {
 .cases,
 .deaths,
 .recovered,
+.tests,
 .active-cases,
 .critical {
   font-size: 1.3rem;
