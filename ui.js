@@ -23,7 +23,7 @@ class UI {
       <ul class="list-group-flush bg-primary stats-list">
        <li class="cases list-group-item bg-dark text-warning"> Cases:<span id="global-cases" data-cases="${
          results.cases
-       }" class="numbers"> ${results.cases.toLocaleString()}</span></li>
+       }" class="numbers"> ${results.cases.toLocaleString()}</span><span class="new-cases text-muted">+${results.todayCases.toLocaleString()}</span></li>
        <li class="deaths list-group-item bg-dark text-danger">Deaths:<span class="numbers"> ${results.deaths.toLocaleString()}</span><span class="death-rate text-muted ml-3">${deathRate}%</span></li>
        <li class="recovered list-group-item bg-dark text-success">Recovered:<span class="numbers"> ${results.recovered.toLocaleString()}</span><span class="recovery-rate text-muted">${recoveryRate}%</span></li>
       </ul>
@@ -31,12 +31,12 @@ class UI {
     </div>`;
   }
 
-  paintGlobalChanges(yesterdaysCases) {
-    const globalCases = document.getElementById("global-cases");
-    const currentCases = globalCases.dataset.cases;
-    const newCases = (currentCases - yesterdaysCases).toLocaleString();
-    globalCases.innerHTML += `<span class="new-cases text-muted">+${newCases}</span>`;
-  }
+  // paintGlobalChanges(yesterdaysCases) {
+  //   const globalCases = document.getElementById("global-cases");
+  //   const currentCases = globalCases.dataset.cases;
+  //   const newCases = (currentCases - yesterdaysCases).toLocaleString();
+  //   globalCases.innerHTML += `<span class="new-cases text-muted">+${newCases}</span>`;
+  // }
 
   paintUSTotals(results) {
     this.usResults.innerHTML += "";
@@ -68,7 +68,7 @@ class UI {
 
   paintStateTotals(results) {
     let rank = 1;
-    console.log(results);
+    // console.log(results);
     results.shift();
     results.forEach((result) => {
       const deathRate = ((result.deaths / result.cases) * 100).toFixed(1);

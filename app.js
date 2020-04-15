@@ -78,32 +78,34 @@ usResults.addEventListener("click", (e) => {
 
 api.globalTotals().then((data) => {
   ui.paintGlobalTotals(data);
+  console.log(data);
 });
 
-api.globalChanges().then((data) => {
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(1, "0");
-  let ydd = String(today.getDate() - 1).padStart(1, "0");
-  let mm = String(today.getMonth() + 1);
-  let yy = String(today.getFullYear()).substr(-2);
-  let yesterday = mm + "/" + ydd + "/" + yy;
-  today = mm + "/" + dd + "/" + yy;
+// api.globalChanges().then((data) => {
+//   let today = new Date();
+//   let dd = String(today.getDate()).padStart(1, "0");
+//   let ydd = String(today.getDate() - 1).padStart(1, "0");
+//   let mm = String(today.getMonth() + 1);
+//   let yy = String(today.getFullYear()).substr(-2);
+//   let yesterday = mm + "/" + ydd + "/" + yy;
+//   today = mm + "/" + dd + "/" + yy;
 
-  let yesterdaysCases = 0;
-  let todaysCases = 0;
+//   let yesterdaysCases = 0;
+//   let todaysCases = 0;
 
-  data.forEach((country) => {
-    //Grab each object key/value pair
-    Object.entries(country.timeline.cases).forEach(([key, value]) => {
-      // If the key matches yesterday's date, add each case
-      if (key === yesterday) {
-        yesterdaysCases += Number(value);
-        // console.log(yesterdaysCases);
-      }
-    });
-  });
-  ui.paintGlobalChanges(yesterdaysCases);
-});
+//   data.forEach((country) => {
+//     //Grab each object key/value pair
+//     Object.entries(country.timeline.cases).forEach(([key, value]) => {
+//       // If the key matches yesterday's date, add each case
+//       if (key === yesterday) {
+//         yesterdaysCases += Number(value);
+//         // console.log(yesterdaysCases);
+//       }
+//     });
+//   });
+
+//   ui.paintGlobalChanges(yesterdaysCases);
+// });
 
 api.usTotals().then((data) => {
   ui.paintUSTotals(data);
