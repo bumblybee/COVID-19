@@ -98,7 +98,7 @@ api.globalChanges().then((data) => {
       // If the key matches yesterday's date, add each case
       if (key === yesterday) {
         yesterdaysCases += Number(value);
-        console.log(yesterdaysCases);
+        // console.log(yesterdaysCases);
       }
     });
   });
