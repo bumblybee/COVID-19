@@ -298,7 +298,8 @@ a:hover {
   .deaths,
   .recovered,
   .active-cases,
-  .critical {
+  .critical,
+  .tests {
     width: 100%;
   }
 
