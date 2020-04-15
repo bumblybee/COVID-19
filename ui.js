@@ -51,13 +51,11 @@ class UI {
       <div class="col bg-primary">
         <ul class="stats-list list-group-flush bg-primary">
          <li class="cases list-group-item bg-dark text-warning"> Cases:<span class="numbers"> ${results.cases.toLocaleString()}</span><span class="new-cases text-muted">+${results.todayCases.toLocaleString()}</span></li>
-        <li class="active-cases list-group-item bg-dark">Active:<span class="numbers"> ${results.active.toLocaleString()}</span></li>
         <li class="critical list-group-item bg-dark">Critical:<span class="numbers"> ${results.critical.toLocaleString()}</span></li>
         
-        <li class="deaths list-group-item bg-dark text-danger">Deaths:<span class="numbers"> ${results.deaths.toLocaleString()}</span><span class="new-death text-muted">+${
-      results.todayDeaths
-    }</span><span class="death-rate text-muted">${deathRate}%</span></li>
+        <li class="deaths list-group-item bg-dark text-danger">Deaths:<span class="numbers"> ${results.deaths.toLocaleString()}</span><span class="new-death text-muted">+${results.todayDeaths.toLocaleString()}</span><span class="death-rate text-muted">${deathRate}%</span></li>
          <li class="list-group-item bg-dark text-success recovered">Recovered:<span class="numbers"> ${results.recovered.toLocaleString()}</span><span class="recovery-rate text-muted">${recoveryRate}%</span></li>
+         <li class="active-cases list-group-item bg-dark">Tests:<span class="numbers"> ${results.tests.toLocaleString()}</span></li>
          
        </ul>
       </div>

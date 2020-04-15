@@ -78,7 +78,6 @@ usResults.addEventListener("click", (e) => {
 
 api.globalTotals().then((data) => {
   ui.paintGlobalTotals(data);
-  console.log(data);
 });
 
 // api.globalChanges().then((data) => {
