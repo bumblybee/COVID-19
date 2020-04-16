@@ -1,6 +1,6 @@
 class API {
   constructor() {
-    this.url = "https://corona.lmao.ninja";
+    this.url = "https://corona.lmao.ninja/v2";
   }
 
   async globalTotals() {
