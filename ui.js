@@ -67,7 +67,7 @@ class UI {
   paintStateTotals(results) {
     let rank = 1;
     // console.log(results);
-    results.shift();
+    // results.shift();
     results.forEach((result) => {
       const deathRate = ((result.deaths / result.cases) * 100).toFixed(1);
       const recovered = result.cases - (result.active + result.deaths);
