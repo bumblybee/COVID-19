@@ -34,4 +34,10 @@ class API {
     const data = await res.json();
     return data;
   }
+
+  async getCounties() {
+    const res = await fetch("https://corona.lmao.ninja/v2/jhucsse/counties");
+    const data = await res.json();
+    return data;
+  }
 }

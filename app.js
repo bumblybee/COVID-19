@@ -21,8 +21,14 @@ closeBtn.addEventListener("click", (e) => {
 
 usResults.addEventListener("keyup", (e) => {
   if ((e.target.id = "search-states")) {
-    const searchText = e.target.value.toLowerCase();
     const children = usResults.children;
+    let searchText = e.target.value.toLowerCase();
+
+    //If space after search value, remove space
+    if (searchText.endsWith("")) {
+      searchText = searchText.substring(0, searchText.length - 1);
+    }
+
     Array.from(children).forEach((child) => {
       if (child.classList.contains("states")) {
         const h1 = child.firstElementChild.firstElementChild.nextElementSibling;
@@ -80,32 +86,6 @@ api.globalTotals().then((data) => {
   ui.paintGlobalTotals(data);
 });
 
-// api.globalChanges().then((data) => {
-//   let today = new Date();
-//   let dd = String(today.getDate()).padStart(1, "0");
-//   let ydd = String(today.getDate() - 1).padStart(1, "0");
-//   let mm = String(today.getMonth() + 1);
-//   let yy = String(today.getFullYear()).substr(-2);
-//   let yesterday = mm + "/" + ydd + "/" + yy;
-//   today = mm + "/" + dd + "/" + yy;
-
-//   let yesterdaysCases = 0;
-//   let todaysCases = 0;
-
-//   data.forEach((country) => {
-//     //Grab each object key/value pair
-//     Object.entries(country.timeline.cases).forEach(([key, value]) => {
-//       // If the key matches yesterday's date, add each case
-//       if (key === yesterday) {
-//         yesterdaysCases += Number(value);
-//         // console.log(yesterdaysCases);
-//       }
-//     });
-//   });
-
-//   ui.paintGlobalChanges(yesterdaysCases);
-// });
-
 api.usTotals().then((data) => {
   ui.paintUSTotals(data);
 });
@@ -120,3 +100,15 @@ window.addEventListener("load", () => {
     ui.paintCountyTotals(data);
   });
 });
+
+//Code below is just to compare county totals to state for personal reference; The county data from mathdroid is more robust, so continue using that for county rendering in app
+// api.getCounties().then((data) => {
+//   // console.log(data);
+//   let cases = 0;
+//   data.forEach((county) => {
+//     if (county.province === "Iowa") {
+//       cases += county.stats.confirmed;
+//     }
+//   });
+//   console.log(cases);
+// });
