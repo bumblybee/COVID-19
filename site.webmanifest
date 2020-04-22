@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "COVID-19 Tracker and Resources",
+  "short_name": "COVID Tracker",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
