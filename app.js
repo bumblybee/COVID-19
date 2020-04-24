@@ -90,15 +90,16 @@ api.usTotals().then((data) => {
   ui.paintUSTotals(data);
 });
 
-//Load this after everything else is loaded so US and global totals load first
-window.addEventListener("load", () => {
+//Load this after everything else is loaded so US and global totals load first - using setTimeout to delay state totals call
+
+setTimeout(() => {
   api.stateTotals().then((data) => {
     ui.paintStateTotals(data);
   });
+}, 1000);
 
-  api.countyTotals().then((data) => {
-    ui.paintCountyTotals(data);
-  });
+api.countyTotals().then((data) => {
+  ui.paintCountyTotals(data);
 });
 
 //Code below is just to compare county totals to state for personal reference; The county data from mathdroid is more robust, so continue using that for county rendering in app
