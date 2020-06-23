@@ -90,7 +90,7 @@ api.usTotals().then((data) => {
   ui.paintUSTotals(data);
 });
 
-//Load this after everything else is loaded so US and global totals load first - using setTimeout to delay state totals call
+//Load this after everything else is loaded so US and global totals load first - using setTimeout to delay state totals call - need to learn how to do this better - async?
 
 setTimeout(() => {
   api.stateTotals().then((data) => {
@@ -102,7 +102,7 @@ api.countyTotals().then((data) => {
   ui.paintCountyTotals(data);
 });
 
-//Code below is just to compare county totals to state for personal reference; The county data from mathdroid is more robust, so continue using that for county rendering in app
+//Code below is just to compare county totals to state for my own personal reference; The county data from mathdroid is more robust, so continue using that for county rendering in app
 // api.getCounties().then((data) => {
 //   // console.log(data);
 //   let cases = 0;
